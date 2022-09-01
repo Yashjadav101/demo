@@ -1,0 +1,175 @@
+<html>
+    <head>
+    <title>Sagar1</title>
+    </head>
+    <body>
+        
+    
+    <center>
+        <table class="table1">
+            <h1>Register</h1>
+            <span id="nname" class="text-danger"></span>
+            <span id="nemail" class="text-danger"></span>
+            <span id="ngender" class="text-danger"></span>
+            <span id="chk_option_error" class="text-danger"></span>
+            <span id="duemail"></span>
+    
+            <form class="form" name="myForm" id="form" > 
+                <input type="hidden" id="index">
+                <tr>
+                    <td>
+                        <label for="name">
+                            Name
+                        </label>
+                    </td>
+                    <td>
+                        <input class="name1" type="text" name="name" id="name" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="email">
+                            Email
+                        </label>
+                    </td>
+                    <td>
+                        
+                        <input class="name1" type="text"  id="email" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="telnum">
+                        Gender:
+                        </label>
+                    </td>
+                    <td>
+                        <div id="gender1">
+                        <input type = "radio" name="gender" value="male" id="male" >Male</input>
+                        <input type = "radio" name="gender" value="female" id="female" >Female</input>
+                    </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="Roll No.">
+                        Hobby:
+                        </label>
+                    </td>
+                    <td>
+                        
+                        <input type = "checkbox" name="langs" value="reading" id="check1">Reading </input>
+                        <input type = "checkbox" name="langs" value="travling" id="check2">Traveling</input>
+                        <input type = "checkbox" name="langs" value="sport" id="check3">Sport</input>
+                        <input type = "checkbox" name="langs" value="other" id="check4">Other</input>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="name">
+                            Age:
+                        </label>
+                    </td>
+                    <td><input class="name1" type="text" id="age" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="name">
+                            State:
+                        </label>
+                    </td>
+                    <td><select id="state" onchange="fillCity(this.value)" name="state"  value="select"  >
+    
+                        <option  selected="selected">Select State</option>
+                        <option value="guj" >guj</option>
+                        <option value="mp" >mp</option>
+                        <option value="mhara" >mhara</option>
+    
+                        
+                      </select>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <label for="name">
+                            City:
+                        </label>
+                    </td>
+                    <td><select id="city" name="city" >
+    
+                        <option value="select" selected="selected">select city</option>
+                      </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="name">
+                            Action:
+                        </label>
+                    </td>
+                    <td>
+                        <button type="submit" value="Submit" id="btn" onclick="event.preventDefault();onFormSubmit()">Submit</button>
+                        
+                        <button type="Cancle" value="Cancle" id="cancle" onclick="event.preventDefault();cancle1();" style="display:none;" >Cancel</button>
+                    </td>
+                </tr>
+                
+    
+            </form>
+        </table>
+    </center>
+    
+    <!-- <form><span>name</span>
+        event.preventDefault();
+        <input type="text" id="name">
+        <span>email</span>
+        <input type="text" id="email">
+        <span>age</span>
+        <input type="text" id="age">
+        <input type="button" value="Submit" onclick="manageData()">
+    
+    </form> -->
+    
+    <div id="msg"></div>
+    <h2>List</h2>
+    <form id="form"> 
+        <input type="text" id="myinput"  placeholder="Search..." onkeyup="searchfun()">
+        <!-- <button>Search</button> -->
+      </form>
+    <table border="1" id="list">
+        <thead>
+            <tr>
+                
+                <td>Name 
+                    <select id="selectedee"onchange="Short()">
+                        <option  value="ascnding" >Asc</option>
+                        <option value="desending" >Dsc</option> 
+                    </select>
+                </td>
+                <td>Email</td>
+                <td>Gender</td>
+                <td>Hobby</td>
+                <td>Age</td>
+                <td>State</td>
+                <td>City</td>
+                <td>Delete</td>
+                <td>Modify</td>
+            </tr>
+        </thead>
+        <tbody id="root">
+            
+          <tr id="norecord" style="display:none">
+              <td>
+                  no record found
+              </td>
+          </tr>      
+            
+           
+        </tbody>
+        
+    </table>
+    
+    <span id="searc"></span>
+    <script src="n.js"></script>
+    
+    </body>
+    </html>

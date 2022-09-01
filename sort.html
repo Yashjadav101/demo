@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>GeeksforGeeks</title>
+	<style>
+		table {
+			border-spacing: 0;
+			width: 80%;
+			border: 1px solid #dddd;
+		}
+		
+		th,
+		td {
+			text-align: left;
+			padding: 15px;
+		}
+		
+		tr:nth-child(even) {
+			background-color: #008000
+		}
+	</style>
+</head>
+
+<body>
+
+	<center>
+		<h1 style="color:green">GeeksforGeeks</h1>
+		<p>
+			<button onclick="sortTable()">Sort</button>
+		</p>
+
+		<table id="table">
+			<tr>
+				<th>Country</th>
+				<th>Capital</th>
+			</tr>
+			<tr>
+				<td>United states of America</td>
+				<td>Washington DC</td>
+			</tr>
+			<tr>
+				<td>India</td>
+				<td>New Delhi</td>
+			</tr>
+			<tr>
+				<td>Australia</td>
+				<td>Canberra</td>
+			</tr>
+			<tr>
+				<td>Germany</td>
+				<td>Berlin</td>
+			</tr>
+
+		</table>
+
+		<script>
+			// JavaScript Program to illustrate
+			// Table sort on a button click
+			function sortTable() {
+				var table, i, x, y;
+				table = document.getElementById("table");
+				var switching = true;
+
+				// Run loop until no switching is needed
+				while (switching) {
+					switching = false;
+					var rows = table.rows;
+
+					// Loop to go through all rows
+					for (i = 1; i < (rows.length - 1); i++) {
+						var Switch = false;
+
+						// Fetch 2 elements that need to be compared
+						x = rows[i].getElementsByTagName("TD")[0];
+						y = rows[i + 1].getElementsByTagName("TD")[0];
+
+						// Check if 2 rows need to be switched
+						if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase())
+							{
+
+							// If yes, mark Switch as needed and break loop
+							Switch = true;
+							break;
+						}
+					}
+					if (Switch) {
+						// Function to switch rows and mark switch as completed
+						rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+						switching = true;
+					}
+				}
+			}
+		</script>
+	</center>
+</body>
+
+</html>
